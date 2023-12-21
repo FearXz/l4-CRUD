@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row, Spinner } from "react-bootstrap";
 
 function AddCommentComp(props) {
+  const [isLoading, setIsLoading] = useState(false);
   const [comment, setComment] = useState({
     comment: "",
     rate: "",
@@ -21,6 +22,7 @@ function AddCommentComp(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     try {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
         method: "POST",
@@ -38,6 +40,7 @@ function AddCommentComp(props) {
     } catch (error) {
       console.log(error);
     } finally {
+      setIsLoading(false);
     }
   };
 
@@ -81,6 +84,7 @@ function AddCommentComp(props) {
               <Button className="mb-3" type="submit">
                 Submit form
               </Button>
+              {isLoading && <Spinner />}
             </Col>
           </Row>
         </Form>

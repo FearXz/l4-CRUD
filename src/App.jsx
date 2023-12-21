@@ -5,6 +5,7 @@ import MyHeader from "./components/MyHeader";
 import MyFooter from "./components/MyFooter";
 import MyMain from "./components/MyMain";
 import { useState } from "react";
+import MyDetail from "./components/MyDetail";
 
 function App() {
   const [valueSearched, setValueSearched] = useState("");
@@ -25,12 +26,16 @@ function App() {
   return (
     <>
       <MyHeader callbackSubmit={handleSearchSubmit} />
-      <MyMain
-        callbackBook={handleBook}
-        callbackDetailPage={handlePage}
-        callbackSubmit={handleSearchSubmit}
-        valueToSearch={valueSearched}
-      />
+      {actualPage == "main" && (
+        <MyMain
+          callbackBook={handleBook}
+          callbackDetailPage={handlePage}
+          callbackSubmit={handleSearchSubmit}
+          valueToSearch={valueSearched}
+        />
+      )}
+      {actualPage == "detail" && <MyDetail bookObj={bookObj} />}
+
       <MyFooter />
     </>
   );

@@ -34,7 +34,7 @@ function CardComp(props) {
               Detail
             </Button>
           </Col>
-          <Col>
+          <Col className=" d-flex justify-content-end">
             <Button variant="danger" onClick={() => props.callbackDelete(props.book.asin)}>
               Delete
             </Button>

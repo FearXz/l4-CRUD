@@ -18,7 +18,6 @@ function CommentAreaComp(props) {
         const arrayCommentObj = await response.json();
         console.log(arrayCommentObj);
         setArrayOfComment(arrayCommentObj);
-        console.log(arrayOfComment);
       }
     } catch (error) {
       console.log(error);
@@ -29,6 +28,10 @@ function CommentAreaComp(props) {
     console.log("sono come un  componentDidMount");
     fetchAllComment(props.bookObj);
   }, []);
+
+  useEffect(() => {
+    fetchAllComment(props.bookObj);
+  }, [props.update]);
 
   return (
     <ListGroup>

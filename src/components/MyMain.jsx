@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import SubtitleComp from "./SubtitleComp";
-import { Col, Container, Row } from "react-bootstrap";
-import CardComp from "./CardComp";
+import { Container } from "react-bootstrap";
 import CategoryComp from "./CategoryComp";
 import fantasy from "../data/fantasy.json";
 import history from "../data/history.json";
@@ -25,7 +24,7 @@ function MyMain(props) {
   const handleCategoryButton = (categoryName) => {
     setSelectedCategory(categoryName);
     console.log(categoryName);
-    props.functionSubmit("");
+    props.callbackSubmit("");
   };
 
   const handleDeleteCard = (asin) => {
@@ -39,15 +38,15 @@ function MyMain(props) {
     <>
       <SubtitleComp />
       <div className="text-center m-5">
-        <CategoryComp callbackFunction={handleCategoryButton} />
+        <CategoryComp callbackCategory={handleCategoryButton} />
       </div>
-      <Container>
+      <Container className="min-vh-100">
         {library[selectedCategory] ? (
           (console.log(library[selectedCategory]),
           (
             <ShowCategoryComp
               valueToSearch={props.valueToSearch}
-              callbackFunction={handleDeleteCard}
+              callbackDelete={handleDeleteCard}
               categoryArray={library[selectedCategory]}
             />
           ))

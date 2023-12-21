@@ -24,7 +24,7 @@ function CardComp(props) {
           {props.book.title}
         </Card.Title>
         <Card.Text></Card.Text>
-        <Button variant="danger" onClick={() => props.callbackFunction(props.book.asin)}>
+        <Button variant="danger" onClick={() => props.callbackDelete(props.book.asin)}>
           Delete
         </Button>
       </Card.Body>

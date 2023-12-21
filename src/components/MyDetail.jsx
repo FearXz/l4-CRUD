@@ -5,6 +5,7 @@ import AddCommentComp from "./AddCommentComp";
 import CommentAreaComp from "./CommentAreaComp";
 
 function MyDetail(props) {
+  console.log(props.bookObj);
   return (
     <Row className=" justify-content-center min-vh-100">
       <Col xs={4}>
@@ -12,7 +13,7 @@ function MyDetail(props) {
       </Col>
       <Col xs={12}>
         <AddCommentComp />
-        <CommentAreaComp />
+        <CommentAreaComp bookObj={props.bookObj} />
       </Col>
     </Row>
   );

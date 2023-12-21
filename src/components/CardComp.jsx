@@ -10,6 +10,7 @@ function CardComp(props) {
     console.log(toggle);
   }
   function handleDetail(bookObj) {
+    console.log(bookObj);
     props.callbackDetailPage("detail");
     props.callbackBook(bookObj);
   }

@@ -20,6 +20,7 @@ function App() {
     setActualPage(page);
   }
   function handleBook(bookObj) {
+    console.log(bookObj);
     setBookObj(bookObj);
   }
 

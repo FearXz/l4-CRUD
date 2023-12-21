@@ -45,9 +45,11 @@ function MyMain(props) {
           (console.log(library[selectedCategory]),
           (
             <ShowCategoryComp
+              callbackDetailPage={props.callbackDetailPage}
               valueToSearch={props.valueToSearch}
               callbackDelete={handleDeleteCard}
               categoryArray={library[selectedCategory]}
+              callbackBook={props.callbackBook}
             />
           ))
         ) : (

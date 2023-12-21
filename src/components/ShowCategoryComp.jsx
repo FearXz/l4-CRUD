@@ -9,7 +9,12 @@ function ShowCategoryComp(props) {
         .filter((book) => book.title.toLowerCase().includes(props.valueToSearch.toLowerCase()))
         .map((book, index) => (
           <Col xs={6} md={4} xl={3} xxl={2} key={`cardBook-${index}`}>
-            <CardComp book={book} callbackDelete={props.callbackDelete} />
+            <CardComp
+              book={book}
+              callbackDetailPage={props.callbackDetailPage}
+              callbackDelete={props.callbackDelete}
+              callbackBook={props.callbackBook}
+            />
           </Col>
         ))}
     </Row>

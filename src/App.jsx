@@ -8,16 +8,29 @@ import { useState } from "react";
 
 function App() {
   const [valueSearched, setValueSearched] = useState("");
+  const [actualPage, setActualPage] = useState("main");
+  const [bookObj, setBookObj] = useState({});
 
   function handleSearchSubmit(value) {
     setValueSearched(value);
     console.log(value);
   }
+  function handlePage(page) {
+    setActualPage(page);
+  }
+  function handleBook(bookObj) {
+    setBookObj(bookObj);
+  }
 
   return (
     <>
       <MyHeader callbackSubmit={handleSearchSubmit} />
-      <MyMain callbackSubmit={handleSearchSubmit} valueToSearch={valueSearched} />
+      <MyMain
+        callbackBook={handleBook}
+        callbackDetailPage={handlePage}
+        callbackSubmit={handleSearchSubmit}
+        valueToSearch={valueSearched}
+      />
       <MyFooter />
     </>
   );

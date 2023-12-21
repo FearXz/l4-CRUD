@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 
 function CardComp(props) {
   const [selected, setSelected] = useState(false);
@@ -8,6 +8,10 @@ function CardComp(props) {
     let toggle = !selected;
     setSelected(toggle);
     console.log(toggle);
+  }
+  function handleDetail(bookObj) {
+    props.callbackDetailPage("detail");
+    props.callbackBook(bookObj);
   }
 
   return (
@@ -24,9 +28,18 @@ function CardComp(props) {
           {props.book.title}
         </Card.Title>
         <Card.Text></Card.Text>
-        <Button variant="danger" onClick={() => props.callbackDelete(props.book.asin)}>
-          Delete
-        </Button>
+        <Row>
+          <Col>
+            <Button variant="primary" onClick={() => handleDetail(props.book)}>
+              Detail
+            </Button>
+          </Col>
+          <Col>
+            <Button variant="danger" onClick={() => props.callbackDelete(props.book.asin)}>
+              Delete
+            </Button>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );

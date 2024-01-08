@@ -20,7 +20,7 @@ function CommentAreaComp(props) {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + bookObj.asin, {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0NTMwZWI1MjViYjAwMThlZDA4NWQiLCJpYXQiOjE3MDMxNzA4MzAsImV4cCI6MTcwNDM4MDQzMH0.9n2eRQgmuK1vg7nUg41-0wLKmsYbqbpso16FWCM0ZL8",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0NTMwZWI1MjViYjAwMThlZDA4NWQiLCJpYXQiOjE3MDQ3MjM0MjUsImV4cCI6MTcwNTkzMzAyNX0.Hu_OirLz5GCraWSzSmR2dYEgx8UHmfuHMTX3YwMgjlQ",
         },
       });
 
@@ -45,7 +45,7 @@ function CommentAreaComp(props) {
         method: "DELETE",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0NTMwZWI1MjViYjAwMThlZDA4NWQiLCJpYXQiOjE3MDMxNzA4MzAsImV4cCI6MTcwNDM4MDQzMH0.9n2eRQgmuK1vg7nUg41-0wLKmsYbqbpso16FWCM0ZL8",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0NTMwZWI1MjViYjAwMThlZDA4NWQiLCJpYXQiOjE3MDQ3MjM0MjUsImV4cCI6MTcwNTkzMzAyNX0.Hu_OirLz5GCraWSzSmR2dYEgx8UHmfuHMTX3YwMgjlQ",
         },
       });
 

@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <MyHeader callbackSubmit={handleSearchSubmit} />
+      <MyHeader callbackSubmit={handleSearchSubmit} handlePage={handlePage} />
       {actualPage == "main" && (
         <MyMain
           callbackBook={handleBook}
